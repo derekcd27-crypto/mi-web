@@ -1,0 +1,61 @@
+{
+ "total": 53.73,
+ "segments": [
+  {
+   "id": "hook",
+   "scene": "hook",
+   "text": "Ana ahorró tres veces menos que Luis… y aun así acabó con más dinero. ¿Cómo es posible?",
+   "start": 0,
+   "dur": 4.784
+  },
+  {
+   "id": "intro",
+   "scene": "intro",
+   "text": "Te lo explico en un minuto.",
+   "start": 5.004,
+   "dur": 1.54
+  },
+  {
+   "id": "ana",
+   "scene": "ana",
+   "text": "Ana empieza a los veinticinco. Invierte cien euros al mes durante diez años, y para. En total pone doce mil euros.",
+   "start": 6.764,
+   "dur": 6.404
+  },
+  {
+   "id": "luis",
+   "scene": "luis",
+   "text": "Luis empieza a los treinta y cinco, y no para hasta los sesenta y cinco. Treinta años. En total pone treinta y seis mil euros.",
+   "start": 13.388,
+   "dur": 6.9
+  },
+  {
+   "id": "reveal",
+   "scene": "reveal",
+   "text": "A los sesenta y cinco, con un siete por ciento anual de media, Luis tiene unos ciento veintitrés mil euros. Y Ana… ¡ciento cuarenta y un mil!",
+   "start": 20.508,
+   "dur": 7.378
+  },
+  {
+   "id": "why",
+   "scene": "why",
+   "text": "La clave es el interés compuesto: tus intereses generan sus propios intereses. Lo que más pesa no es cuánto pones, sino cuánto tiempo lo dejas crecer.",
+   "start": 28.106,
+   "dur": 8.255
+  },
+  {
+   "id": "rule",
+   "scene": "rule",
+   "text": "Truco rápido: la regla del setenta y dos. Divide setenta y dos entre la rentabilidad, y sabrás en cuántos años se duplica tu dinero. Al siete por ciento, unos diez años.",
+   "start": 36.58,
+   "dur": 9.6
+  },
+  {
+   "id": "cta",
+   "scene": "cta",
+   "text": "Es un ejemplo, no un consejo de inversión. Sígueme para un truco de dinero cada día, y comenta: ¿a qué edad empezaste tú?",
+   "start": 46.4,
+   "dur": 6.31
+  }
+ ]
+}

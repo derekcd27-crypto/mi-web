@@ -1,0 +1,164 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#070b1a;font-family:"Inter",sans-serif}
+#stage{position:absolute;inset:0;overflow:hidden}
+#bg{position:absolute;inset:-300px;background:radial-gradient(circle at 50% 38%,#1b2b5e 0%,#0c1430 45%,#05070f 100%)}
+#grid{position:absolute;inset:-100px;background-image:linear-gradient(rgba(120,160,255,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(120,160,255,.07) 2px,transparent 2px);background-size:90px 90px}
+.scene{position:absolute;inset:0;opacity:0}
+.badge{position:absolute;top:120px;left:50%;transform:translateX(-50%);background:#2bd97c;color:#062b16;font-weight:900;font-size:40px;padding:16px 36px;border-radius:60px;white-space:nowrap;box-shadow:0 8px 0 #148a4b}
+.label{position:absolute;left:50%;transform:translateX(-50%);font-weight:900;color:#fff;text-align:center;white-space:nowrap;text-shadow:0 6px 0 rgba(0,0,0,.45)}
+.big{font-size:120px;line-height:1}.mid{font-size:72px}.sm{font-size:48px}
+.g{color:#2bd97c}.p{color:#c58bff}.b{color:#5cb8ff}.y{color:#ffd23f}
+#caps{position:absolute;left:50px;right:50px;top:1360px;text-align:center;font-weight:900;font-size:84px;line-height:1.1;color:#fff;-webkit-text-stroke:14px #000;paint-order:stroke fill;text-transform:uppercase}
+#caps span{display:inline-block;margin:0 10px}
+#caps span.on{color:#2bd97c;transform:scale(1.12)}
+#prog{position:absolute;left:0;bottom:0;height:14px;background:#2bd97c}
+.coin{position:absolute;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3a0,#ffc400 45%,#b07d00);border:5px solid #8a6100;color:#7a5200;font-weight:900;font-size:40px;display:flex;align-items:center;justify-content:center}
+</style></head>
+<body><div id="stage"><div id="bg"></div><div id="grid"></div>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+ <g id="ana"><circle r="150" fill="#c58bff"/><path d="M-120 -40 Q-130 -150 0 -150 Q130 -150 120 -40 Q100 -100 0 -100 Q-100 -100 -120 -40Z" fill="#3a1d5c"/>
+  <path d="M-130 -40 Q-150 80 -110 120 L-95 0Z M130 -40 Q150 80 110 120 L95 0Z" fill="#3a1d5c"/>
+  <circle cx="-48" cy="0" r="16" fill="#111"/><circle cx="48" cy="0" r="16" fill="#111"/><path d="M-50 55 Q0 95 50 55" stroke="#111" stroke-width="12" fill="none" stroke-linecap="round"/></g>
+ <g id="luis"><circle r="150" fill="#5cb8ff"/><path d="M-120 -50 Q-110 -150 0 -150 Q110 -150 120 -50 Q60 -110 -120 -50Z" fill="#14243f"/>
+  <circle cx="-48" cy="0" r="16" fill="#111"/><circle cx="48" cy="0" r="16" fill="#111"/><path d="M-50 60 Q0 85 50 60" stroke="#111" stroke-width="12" fill="none" stroke-linecap="round"/></g>
+ <g id="crown"><path d="M-90 40 L-100 -50 L-50 0 L0 -70 L50 0 L100 -50 L90 40Z" fill="#ffd23f" stroke="#b8860b" stroke-width="8"/></g>
+</defs></svg>
+
+<div class="scene" id="s-hook">
+ <svg width="1080" height="1920" style="position:absolute;left:0;top:0">
+  <g id="hA" transform="translate(300 760)"><use href="#ana"/></g>
+  <g id="hL" transform="translate(780 760)"><use href="#luis"/></g>
+ </svg>
+ <div class="label mid p" style="top:450px;left:300px">ANA</div><div class="label mid b" style="top:450px;left:780px">LUIS</div>
+ <div class="label sm" style="top:960px;left:300px">PUSO</div><div class="label sm" style="top:960px;left:780px">PUSO</div>
+ <div class="label mid" id="hAm" style="top:1030px;left:300px">12.000 €</div><div class="label mid" id="hLm" style="top:1030px;left:780px">36.000 €</div>
+ <div class="label" id="hQ" style="top:1150px;font-size:110px;opacity:0" ><span class="g">…Y GANÓ ANA</span></div>
+</div>
+
+<div class="scene" id="s-intro">
+ <svg width="1080" height="1920" style="position:absolute;left:0;top:0"><g transform="translate(540 820)">
+  <circle r="230" fill="#0c1430" stroke="#2bd97c" stroke-width="26"/><rect x="-40" y="-300" width="80" height="60" rx="12" fill="#2bd97c"/>
+  <path id="sweep" d="" fill="rgba(43,217,124,.35)"/>
+  <line id="hand" x1="0" y1="0" x2="0" y2="-190" stroke="#fff" stroke-width="18" stroke-linecap="round"/><circle r="22" fill="#fff"/></g></svg>
+ <div class="label big" style="top:1110px">EN <span class="g">1 MINUTO</span></div>
+</div>
+
+<div class="scene" id="s-ana">
+ <svg width="1080" height="1920" style="position:absolute;left:0;top:0"><g transform="translate(540 560) scale(.8)"><use href="#ana"/></g></svg>
+ <div class="label mid p" style="top:300px">ANA</div>
+ <div id="tlA" style="position:absolute;left:90px;top:840px;width:900px;height:70px;border-radius:35px;background:rgba(255,255,255,.12)"><div id="tlAf" style="position:absolute;left:0;top:0;height:70px;border-radius:35px;background:#c58bff;width:0"></div></div>
+ <div class="label sm" style="top:930px;left:90px;transform:none">25</div><div class="label sm" style="top:930px;left:300px;transform:none">35</div><div class="label sm" style="top:930px;left:930px;transform:none">65</div>
+ <div class="label sm" id="aStop" style="top:760px;left:400px;transform:none;color:#ff6b6b;opacity:0">⏸ PARA</div>
+ <div class="label big" id="aSum" style="top:1080px">0 €</div>
+ <div id="coinsA"></div>
+</div>
+
+<div class="scene" id="s-luis">
+ <svg width="1080" height="1920" style="position:absolute;left:0;top:0"><g transform="translate(540 560) scale(.8)"><use href="#luis"/></g></svg>
+ <div class="label mid b" style="top:300px">LUIS</div>
+ <div style="position:absolute;left:90px;top:840px;width:900px;height:70px;border-radius:35px;background:rgba(255,255,255,.12)"><div id="tlLf" style="position:absolute;left:225px;top:0;height:70px;border-radius:35px;background:#5cb8ff;width:0"></div></div>
+ <div class="label sm" style="top:930px;left:90px;transform:none">25</div><div class="label sm" style="top:930px;left:300px;transform:none">35</div><div class="label sm" style="top:930px;left:930px;transform:none">65</div>
+ <div class="label big" id="lSum" style="top:1080px">0 €</div>
+</div>
+
+<div class="scene" id="s-reveal">
+ <div class="label mid" style="top:290px">A LOS <span class="y">65 AÑOS</span></div>
+ <div class="label sm" style="top:390px;opacity:.8">(7 % anual de media)</div>
+ <div id="barL" style="position:absolute;left:600px;width:260px;bottom:700px;height:0;background:linear-gradient(#5cb8ff,#2a6fb0);border-radius:24px 24px 0 0"></div>
+ <div id="barA" style="position:absolute;left:220px;width:260px;bottom:700px;height:0;background:linear-gradient(#c58bff,#7a3fc0);border-radius:24px 24px 0 0"></div>
+ <div class="label sm" id="vL" style="left:730px;opacity:0">122.709 €</div>
+ <div class="label sm" id="vA" style="left:350px;opacity:0">141.304 €</div>
+ <div class="label mid b" style="top:1240px;left:730px">LUIS</div><div class="label mid p" style="top:1240px;left:350px">ANA</div>
+ <svg width="1080" height="1920" style="position:absolute;left:0;top:0"><g id="crownA" opacity="0"><use href="#crown"/></g></svg>
+</div>
+
+<div class="scene" id="s-why">
+ <div class="label mid" style="top:290px">INTERÉS <span class="g">COMPUESTO</span></div>
+ <svg width="1080" height="1920" style="position:absolute;left:0;top:0">
+  <path d="M120 1180 H980 M120 1180 V480" stroke="rgba(255,255,255,.4)" stroke-width="8"/>
+  <path id="curve" d="" stroke="#2bd97c" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <g id="ball"><circle r="0" fill="#fff" id="ballc"/><text id="ballt" text-anchor="middle" dy="18" font-family="Inter" font-weight="900" font-size="50" fill="#0c1430">€</text></g>
+ </svg>
+ <div class="label sm" style="top:1210px;left:540px">TIEMPO →</div>
+ <div class="label sm y" id="wTxt" style="top:420px;opacity:0">INTERESES SOBRE INTERESES</div>
+</div>
+
+<div class="scene" id="s-rule">
+ <div class="label mid" style="top:290px">REGLA DEL <span class="y">72</span></div>
+ <div class="label" id="r1" style="top:560px;font-size:170px;opacity:0">72</div>
+ <div class="label" id="r2" style="top:740px;font-size:110px;opacity:0">÷ RENTABILIDAD</div>
+ <div class="label" id="r3" style="top:900px;font-size:110px;opacity:0">= AÑOS PARA <span class="g">×2</span></div>
+ <div class="label y" id="r4" style="top:1100px;font-size:100px;opacity:0">72 ÷ 7 ≈ 10 AÑOS</div>
+</div>
+
+<div class="scene" id="s-cta">
+ <div class="label" style="top:300px;font-size:36px;opacity:.85">Ejemplo educativo · no es consejo de inversión</div>
+ <svg width="1080" height="1920" style="position:absolute;left:0;top:0"><g id="bubble" transform="translate(540 700)">
+  <rect x="-420" y="-130" width="840" height="230" rx="40" fill="#fff"/><path d="M-200 95 L-240 170 L-130 95Z" fill="#fff"/>
+  <text x="0" y="10" text-anchor="middle" font-family="Inter" font-weight="900" font-size="58" fill="#111">¿A qué edad empezaste?</text></g></svg>
+ <div id="subBtn" style="position:absolute;left:50%;top:1000px;transform:translateX(-50%);background:#ff0033;color:#fff;font-weight:900;font-size:64px;padding:26px 60px;border-radius:24px;white-space:nowrap">SUSCRÍBETE</div>
+</div>
+
+<div class="badge" id="badge">€ DINERO EN 1 MINUTO</div>
+<div id="caps"></div><div id="prog"></div>
+</div>
+<script>
+const TL=__TIMELINE__;const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));const eo=x=>1-Math.pow(1-clamp(x),3);
+const back=x=>{x=clamp(x);const c=1.70158;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const fmt=n=>Math.round(n).toLocaleString('es-ES');
+const segs=TL.segments;
+segs.forEach(s=>{const w=s.text.split(/\s+/).filter(Boolean);const tot=w.reduce((a,x)=>a+x.length+2,0);let acc=0;
+ s.words=w.map(x=>{const st=s.start+acc/tot*s.dur;acc+=x.length+2;return{w:x.replace(/…/g,''),st,en:s.start+acc/tot*s.dur}});
+ s.groups=[];for(let i=0;i<s.words.length;i+=3)s.groups.push(s.words.slice(i,i+3));});
+const S=Object.fromEntries(segs.map(s=>[s.id,s]));
+// relative time of first word matching re (nth occurrence)
+const wt=(id,re,n=0)=>{const s=S[id];const m=s.words.filter(w=>re.test(w.w));return (m[n]||m[0]).st-s.start};
+const T={hookAcabo:wt('hook',/acabó/),anaPara:wt('ana',/para/),reL:wt('reveal',/Luis/),reA:wt('reveal',/^Ana/),whyInt:wt('why',/propios/),
+ r72:wt('rule',/Divide/),rEntre:wt('rule',/rentabilidad/),rAnos:wt('rule',/sabrás/),rSiete:wt('rule',/^Al$/)};
+function sceneOf(t){let cur=segs[0];segs.forEach(s=>{if(t>=s.start-0.05)cur=s});return cur}
+function render(t){
+ const seg=sceneOf(t),u=t-seg.start,d=seg.dur+0.22;
+ document.querySelectorAll('.scene').forEach(e=>e.style.opacity=0);
+ const el=$('s-'+seg.scene),inA=eo(u/0.25);el.style.opacity=inA;
+ el.style.transform=`scale(${1.08-0.08*inA+0.015*Math.sin(t*1.3)})`;
+ $('grid').style.transform=`translate(${(t*20)%90}px,${(t*35)%90}px)`;
+ $('prog').style.width=(t/TL.total*1080)+'px';
+ switch(seg.scene){
+  case 'hook':{const k=clamp((u-T.hookAcabo)/0.3);
+   $('hA').setAttribute('transform',`translate(300 760) scale(${1+0.25*back((u-T.hookAcabo)/0.4)*k}) rotate(${k*6*Math.sin(t*8)})`);
+   $('hQ').style.opacity=k;$('hQ').style.transform=`translateX(-50%) scale(${back((u-T.hookAcabo)/0.4)})`;break;}
+  case 'intro':{const a=Math.min(1,u/1.6)*2*Math.PI;$('hand').setAttribute('transform',`rotate(${a*180/Math.PI})`);
+   const x=190*Math.sin(a),y=-190*Math.cos(a);$('sweep').setAttribute('d',`M0 0 L0 -190 A190 190 0 ${a>Math.PI?1:0} 1 ${x} ${y}Z`);break;}
+  case 'ana':{const k=eo((u-0.5)/(T.anaPara-0.5));$('tlAf').style.width=(225*k)+'px';
+   $('aSum').textContent=fmt(12000*k)+' €';$('aStop').style.opacity=clamp((u-T.anaPara)/0.2);
+   $('aSum').style.color=k>=1?'#c58bff':'#fff';break;}
+  case 'luis':{const k=eo((u-0.5)/4.5);$('tlLf').style.width=(675*k)+'px';$('lSum').textContent=fmt(36000*k)+' €';
+   $('lSum').style.color=k>=1?'#5cb8ff':'#fff';break;}
+  case 'reveal':{const H=520/141304;
+   const kl=eo((u-T.reL)/1.2),ka=eo((u-T.reA)/1.0);
+   $('barL').style.height=(122709*H*kl)+'px';$('barA').style.height=(141304*H*ka)+'px';
+   $('vL').style.opacity=kl>0?1:0;$('vL').style.top=(1920-700-122709*H*kl-80)+'px';$('vL').textContent=fmt(122709*kl)+' €';
+   $('vA').style.opacity=ka>0?1:0;$('vA').style.top=(1920-700-141304*H*ka-80)+'px';$('vA').textContent=fmt(141304*ka)+' €';
+   const c=clamp((u-T.reA-1.0)/0.3);$('crownA').setAttribute('opacity',c);
+   $('crownA').setAttribute('transform',`translate(350 ${1920-700-520-150+10*Math.sin(t*5)}) scale(${back((u-T.reA-1)/0.4)}) rotate(${5*Math.sin(t*3)})`);break;}
+  case 'why':{const k=clamp((u-0.3)/5.5);let dd='';let lx=120,ly=1180;
+   for(let i=0;i<=100*k;i++){const x=i/100;lx=120+860*x;ly=1180-560*(Math.pow(1.07,40*x)-1)/(Math.pow(1.07,40)-1);dd+=(i?'L':'M')+lx+' '+ly}
+   $('curve').setAttribute('d',dd);const r=25+45*Math.pow(k,1.6);$('ballc').setAttribute('r',r);
+   $('ball').setAttribute('transform',`translate(${lx} ${ly-r}) `);$('ballt').setAttribute('font-size',r*1.1);$('ballt').setAttribute('dy',r*0.38);
+   $('wTxt').style.opacity=clamp((u-T.whyInt)/0.3);break;}
+  case 'rule':{[['r1',T.r72],['r2',T.rEntre],['r3',T.rAnos],['r4',T.rSiete]].forEach(([id,at])=>{
+    $(id).style.opacity=clamp((u-at)/0.2);$(id).style.transform=`translateX(-50%) scale(${back((u-at)/0.35)})`});break;}
+  case 'cta':{$('bubble').setAttribute('transform',`translate(540 700) scale(${back(u/0.5)})`);
+   const pt=3.3;$('subBtn').style.transform=`translateX(-50%) scale(${u>pt&&u<pt+0.3?0.9:1+0.04*Math.sin(t*8)})`;
+   $('subBtn').style.background=u>pt+0.2?'#555':'#ff0033';$('subBtn').textContent=u>pt+0.2?'SUSCRITO ✓':'SUSCRÍBETE';break;}
+ }
+ let g=null;for(const gr of seg.groups){if(t>=gr[0].st-0.02)g=gr}if(!g)g=seg.groups[0];
+ $('caps').innerHTML=t>seg.start+seg.dur+0.15?'':g.map(w=>`<span class="${t>=w.st&&t<w.en?'on':''}">${w.w}</span>`).join(' ');
+}
+window.render=render;
+</script></body></html>
