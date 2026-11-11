@@ -1,0 +1,75 @@
+{
+ "total": 47.034,
+ "segments": [
+  {
+   "id": "hook",
+   "scene": "hook",
+   "text": "Este bicho de un centímetro es el animal más fuerte del planeta. Y no, no es la hormiga.",
+   "start": 0,
+   "dur": 4.635
+  },
+  {
+   "id": "intro",
+   "scene": "intro",
+   "text": "Esto es El Bicho Ganador del Día.",
+   "start": 4.855,
+   "dur": 1.913
+  },
+  {
+   "id": "c1",
+   "scene": "ant",
+   "text": "Candidato uno: la hormiga cortadora. Carga hasta cincuenta veces su peso. Impresionante… pero hoy no gana.",
+   "start": 6.988,
+   "dur": 5.933
+  },
+  {
+   "id": "c2",
+   "scene": "elephant",
+   "text": "Candidato dos: el elefante. Seis toneladas de músculo. Pero en proporción a su tamaño, ni se acerca.",
+   "start": 13.142,
+   "dur": 5.278
+  },
+  {
+   "id": "win",
+   "scene": "winner",
+   "text": "Y el ganador de hoy es… ¡el escarabajo pelotero de cuernos!",
+   "start": 18.64,
+   "dur": 3.106
+  },
+  {
+   "id": "fact",
+   "scene": "fact",
+   "text": "En un experimento científico, los machos aguantaron una fuerza de mil ciento cuarenta y una veces su propio peso.",
+   "start": 21.966,
+   "dur": 6.222
+  },
+  {
+   "id": "human",
+   "scene": "bus",
+   "text": "Es como si tú sujetaras seis autobuses de dos pisos… llenos de gente.",
+   "start": 28.408,
+   "dur": 3.784
+  },
+  {
+   "id": "why",
+   "scene": "tunnel",
+   "text": "¿Y para qué tanta fuerza? Para pelear con otros machos dentro de túneles estrechos, y quedarse con la hembra.",
+   "start": 32.413,
+   "dur": 5.758
+  },
+  {
+   "id": "score",
+   "scene": "score",
+   "text": "Fuerza: diez. Tamaño: uno. Actitud: infinita.",
+   "start": 38.391,
+   "dur": 2.573
+  },
+  {
+   "id": "cta",
+   "scene": "cta",
+   "text": "Comenta qué bicho quieres que compita mañana, y suscríbete para ver al ganador de cada día.",
+   "start": 41.184,
+   "dur": 4.83
+  }
+ ]
+}
